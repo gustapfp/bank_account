@@ -1,7 +1,8 @@
 import bank
 
 class Account(bank.Bank):
-    def __init__(self, code):
+    def __init__(self, code, bank_code):
+        super().__init__(bank_code)
         self.code = code
         self._balance = 0
     @property
@@ -22,7 +23,12 @@ class Account(bank.Bank):
     def withdraw(self, money_value):
         self._balance -= money_value
 
-# x = Account(200)
+    def __str__(self):
+        return f"Conta de número: {self.code}, saldo: {self.account_balance}, do Banco de código: {self._bank_code}"
+    
+
+# x = Account(200, 1)
+# print(x)
 # x.account_balance = 1000
 # y = Account(207)
 # y.account_balance = 570
