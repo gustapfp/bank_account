@@ -17,7 +17,8 @@ class CheckingAccount(account.Account, bank.Bank):
     def __init__(self, code, bank_code):
         super().__init__(code, bank_code)
 
-    def mounth_turn(self):
+    def mounth_turn(self, salary):
+        self._balance += salary
         self._balance -= self.administration_fee(self._bank_code)
     
     
