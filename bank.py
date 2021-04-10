@@ -25,5 +25,3 @@ class Bank:
             104:21
         }
         return banks_fee[bank_code]
-
-    

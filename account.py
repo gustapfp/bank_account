@@ -1,5 +1,5 @@
 import bank
-
+@total_ordering
 class Account(bank.Bank):
     def __init__(self, code, bank_code):
         super().__init__(bank_code)
@@ -24,25 +24,14 @@ class Account(bank.Bank):
         self._balance -= money_value
 
     def __str__(self):
-        return f"Conta de número: {self.code}, saldo: {self.account_balance}, do Banco de código: {self._bank_code}"
+        return f"Account number: {self.code}, balance: {self.account_balance}, bank code: {self._bank_code}"
+
+    def __eq__(self, other_balance):
+        accountA = self.account_balance() 
+        accountB = self.account_balance()
+        return accountA == accountB
     
-
-# x = Account(200, 1)
-# print(x)
-# x.account_balance = 1000
-# y = Account(207)
-# y.account_balance = 570
-# print(x.account_balance)
-# print(y.account_balance)
-# x.transfer(300, y)
-# print(x.account_balance)
-# print(y.account_balance)
-# x.deposity(200)
-# print(x.account_balance)
-# print(y.account_balance)
-# y.withdraw(400)
-# print(x.account_balance)
-# print(y.account_balance)
-
-
-        
+    def __lt__(self, other_balance):
+        accountA = self.account_balance() 
+        accountB = self.account_balance()
+        return accountA < accountB
