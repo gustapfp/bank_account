@@ -11,7 +11,7 @@ class Bank:
                 
         for code in range(len(registered_banks)):
             if bank_code == registered_banks[code][1]:
-                print(f"welcome to the bank: {registered_banks[code][0]}!")
+                print(f"welcome to bank: {registered_banks[code][0]}!")
                 return True
         return False
 

@@ -1,5 +1,8 @@
-import bank, account_types as at, account
+import bank
+import account
+import account_types as at
 from random import randint
+from operator import attrgetter
 
 
 
@@ -24,11 +27,13 @@ clients = [
     fernanda, 
     koda
 ]
-# clients = list(enumerate(clients, start=0))
-print(clients)
+
 months = 0
 while months != 120:
     for i in range(len(clients)):
         clients[i].mounth_turn()
     months +=1
-print(clients)
+
+clients =  sorted(clients, key=attrgetter('_balance'), reverse=True)
+for i in range(len(clients)):
+    print(clients[i])

@@ -23,6 +23,3 @@ class CheckingAccount(account.Account, bank.Bank):
     def mounth_turn(self):
         self._balance += self.salary
         self._balance -= self.administration_fee(self._bank_code)
-
-    def __str__(self):
-        return f"Hi, cliente code: {self.bank_code}! Your current balancy is: {self.account_balance()}"

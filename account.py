@@ -1,4 +1,6 @@
 import bank
+from functools import total_ordering
+
 @total_ordering
 class Account(bank.Bank):
     def __init__(self, code, bank_code):
