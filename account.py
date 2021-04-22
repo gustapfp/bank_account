@@ -10,7 +10,7 @@ class Account(bank.Bank):
     @property
     def account_balance(self): 
         return self._balance
-        
+         
     @account_balance.setter
     def account_balance(self, money_value):
         self._balance = money_value
