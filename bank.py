@@ -1,6 +1,6 @@
 class Bank:
     def __init__(self, bank_code):
-       if self.check_bank_code(bank_code) == True:
+       if self.check_bank_code(bank_code):
            self._bank_code = bank_code
        else:
            raise LookupError("This bank is not registered on our system!")

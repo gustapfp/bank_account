@@ -1,9 +1,10 @@
+from random import randint
 import bank
 import account
 
 class SavingsAccount(account.Account, bank.Bank):
-    def __init__(self, code, bank_code, salary):
-        super().__init__(code, bank_code)
+    def __init__(self, code, bank_code, salary, doc, tel, cep):
+        super().__init__(code, bank_code, doc, tel, cep)
         self.salary = salary
 
     def interest_rate(self):
@@ -16,8 +17,8 @@ class SavingsAccount(account.Account, bank.Bank):
         self.salary += self.salary
 
 class CheckingAccount(account.Account, bank.Bank):
-    def __init__(self, code, bank_code, salary):
-        super().__init__(code, bank_code)
+    def __init__(self, code, bank_code, salary, doc, tel, cep):
+        super().__init__(code, bank_code, doc, tel, cep)
         self.salary = salary
 
     def mounth_turn(self):
